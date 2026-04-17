@@ -164,9 +164,15 @@ export default function App() {
             <FadeIn delay={0.2}>
               <div className="relative">
                 <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-video flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/80 flex items-center justify-center text-white text-3xl pl-1 shadow-2xl cursor-pointer hover:bg-primary transition-colors">
-                    ▶
-                  </div>
+                   <video
+                    src={`${import.meta.env.BASE_URL}intro.mp4`}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                  />
                   <div className="absolute bottom-4 left-4 right-4 text-center">
                     <p className="text-xs md:text-sm text-white/60 italic">
                       Watch this 2-minute video to understand how it works
@@ -316,7 +322,7 @@ export default function App() {
             <FadeIn>
               <div className="bg-secondary rounded-2xl overflow-hidden group border border-border-main">
                 <div className="aspect-video relative overflow-hidden">
-                  <img src="/onmichannel-sales-analysis.png" alt="Sales Dashboard" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
+                  <img src="/Data-Analysis-Bootcamp/onmichannel-sales-analysis.png" alt="Sales Dashboard" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <h3 className="text-2xl font-bold text-white mb-2">Omnichannel Sales Analysis</h3>
@@ -328,7 +334,7 @@ export default function App() {
             <FadeIn delay={0.2}>
               <div className="bg-secondary rounded-2xl overflow-hidden group border border-border-main">
                 <div className="aspect-video relative overflow-hidden">
-                  <img src="/python-based-analysis.png" alt="Business Case Study" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
+                  <img src="/Data-Analysis-Bootcamp/python-based-analysis.png" alt="Business Case Study" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <h3 className="text-2xl font-bold text-white mb-2">Customer Churn Prediction</h3>
@@ -395,7 +401,7 @@ export default function App() {
           <div className="bg-secondary rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white relative overflow-hidden mb-24">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -mr-32 -mt-32" />
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shrink-0 border-4 border-white/5 shadow-2xl">
-              <img src="/profile-image.jpg" alt="Instructor" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+              <img src="/Data-Analysis-Bootcamp/profile-image.jpg" alt="Instructor" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
             </div>
             <div className="max-w-xl">
               <div className="inline-block bg-primary px-4 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest mb-6">Course Instructor</div>
