@@ -314,7 +314,7 @@ export default function App() {
             <FadeIn>
               <div className="bg-secondary rounded-2xl overflow-hidden group border border-border-main">
                 <div className="aspect-video relative overflow-hidden">
-                  <img src="https://picsum.photos/seed/dashboard1/800/450" alt="Sales Dashboard" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
+                  <img src="/onmichannel-sales-analysis.png" alt="Sales Dashboard" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <h3 className="text-2xl font-bold text-white mb-2">Omnichannel Sales Analysis</h3>
@@ -326,7 +326,7 @@ export default function App() {
             <FadeIn delay={0.2}>
               <div className="bg-secondary rounded-2xl overflow-hidden group border border-border-main">
                 <div className="aspect-video relative overflow-hidden">
-                  <img src="https://picsum.photos/seed/dashboard2/800/450" alt="Business Case Study" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
+                  <img src="/python-based-analysis.png" alt="Business Case Study" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 opacity-80" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary to-transparent" />
                   <div className="absolute bottom-8 left-8">
                     <h3 className="text-2xl font-bold text-white mb-2">Customer Churn Prediction</h3>
