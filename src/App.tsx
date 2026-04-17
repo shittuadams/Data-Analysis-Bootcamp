@@ -25,13 +25,15 @@ import {
   ChevronUp,
   LayoutDashboard,
   ShieldCheck,
-  Zap
+  Zap,
+  MessageSquare,
+  Quote
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // --- Constants & Links ---
 const SELAR_CHECKOUT_URL = "https://selar.co/m/skalearn-data-bootcamp"; // Placeholder Selar link
-const WHATSAPP_URL = "https://wa.me/2348123456789"; // Placeholder WhatsApp link
+const WHATSAPP_URL = "https://wa.me/2348077555789"; 
 const COURSE_PRICE_ORIGINAL = "₦60,000";
 const COURSE_PRICE_CURRENT = "₦24,900";
 
@@ -51,8 +53,8 @@ const Button = ({ children, className = "", onClick, primary = true, icon: Icon 
   </button>
 );
 
-const SectionHeading = ({ children, subtitle, light = false }: any) => (
-  <div className="mb-12 text-center">
+const SectionHeading = ({ children, subtitle, light = false, className = "" }: any) => (
+  <div className={`mb-12 text-center ${className}`}>
     {subtitle && (
       <span className={`text-sm font-bold tracking-widest uppercase mb-2 block ${light ? 'text-primary/60' : 'text-primary'}`}>
         {subtitle}
@@ -115,7 +117,7 @@ export default function App() {
             exit={{ y: 100 }}
             className="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-border-main z-50 md:hidden flex justify-center"
           >
-            <Button onClick={enrollNow} className="w-full max-w-sm">
+            <Button onClick={enrollNow} className="w-full max-w-sm text-sm">
               Enroll Now — {COURSE_PRICE_CURRENT}
             </Button>
           </motion.div>
@@ -192,7 +194,7 @@ export default function App() {
                 <div className="p-8 rounded-xl bg-bg-main border border-border-main group hover:border-primary/20 transition-colors">
                   <item.icon className="w-10 h-10 text-primary opacity-20 mb-6 group-hover:opacity-100 transition-opacity" />
                   <h3 className="text-xl font-extrabold mb-4 text-secondary">{item.title}</h3>
-                  <p className="text-text-muted leading-relaxed">{item.desc}</p>
+                  <p className="text-text-muted leading-relaxed text-sm">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -251,7 +253,7 @@ export default function App() {
                   <h3 className="text-2xl font-extrabold mb-4 text-secondary">{item.title}</h3>
                   <ul className="space-y-3">
                     {item.list.map((li, i) => (
-                      <li key={i} className="flex items-center gap-3 text-text-muted">
+                      <li key={i} className="flex items-center gap-3 text-text-muted text-sm">
                         <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                         <span>{li}</span>
                       </li>
@@ -389,26 +391,67 @@ export default function App() {
       {/* --- 10. TESTIMONIALS / AUTHORITY --- */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading subtitle="Expertise">Learn from Experience</SectionHeading>
-          <div className="bg-secondary rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white relative overflow-hidden">
+          <SectionHeading subtitle="Expertise">Led by Industry Professionals</SectionHeading>
+          <div className="bg-secondary rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 text-white relative overflow-hidden mb-24">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -mr-32 -mt-32" />
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shrink-0 border-4 border-white/5 shadow-2xl">
-              <img src="https://picsum.photos/seed/instructor/400/400" alt="Instructor" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+              <img src="/profile-image.jpg" alt="Instructor" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
             </div>
             <div className="max-w-xl">
               <div className="inline-block bg-primary px-4 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest mb-6">Course Instructor</div>
-              <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Led by Industry Professionals</h3>
+              <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Adams Shittu</h3>
               <p className="text-lg text-white/50 mb-8 leading-relaxed italic">
                 "We don't just teach you formulas. We teach you how to think like an analyst, solve business problems, and communicate insights that drive decisions. Our goal is your transformation, not just your certificate."
               </p>
               <div className="flex items-center gap-4">
-                <Linkedin className="w-5 h-5 text-primary" />
                 <div>
-                  <p className="font-bold">Skalearn Mentors</p>
-                  <p className="text-white/40 text-sm">Sr. Data Analysts with 7+ years of exp.</p>
+                  <p className="font-bold">Lead Mentor at Skalearn</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* --- STUDENT TESTIMONIALS --- */}
+          <SectionHeading subtitle="Student Success" className="mt-24">Real Stories, Real Results</SectionHeading>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                name: "Tunde Ayomide", 
+                role: "Junior Data Analyst", 
+                text: "The way Adams explains SQL made it so easy to grasp. I was a complete beginner with no tech background, but I just finished building my first automated sales database. This bootcamp changed everything for me.",
+                image: "https://picsum.photos/seed/stu1/100/100"
+              },
+              { 
+                name: "Choma Okeke", 
+                role: "Business Operations Manager", 
+                text: "The Power BI module is worth the price alone. I now build dashboards for my company's quarterly reviews in hours instead of days. The automation techniques taught here are simply world-class.",
+                image: "https://picsum.photos/seed/stu2/100/100"
+              },
+              { 
+                name: "Ibrahim K.", 
+                role: "Career Switcher", 
+                text: "I was hesitant at first, but this is the most practical course I've ever taken. The projects feel real, and the Telegram community is always there to help. I landed my first data-entry internship last week!",
+                image: "https://picsum.photos/seed/stu3/100/100"
+              }
+            ].map((item, idx) => (
+              <FadeIn key={idx} delay={idx * 0.1}>
+                <div className="bg-white p-8 rounded-2xl border border-border-main shadow-sm relative h-full flex flex-col">
+                  <div className="flex gap-1 mb-6">
+                    {[1,2,3,4,5].map(star => <Zap key={star} className="w-4 h-4 fill-accent text-accent" />)}
+                  </div>
+                  <p className="text-secondary font-medium leading-relaxed mb-8 italic text-sm">
+                    "{item.text}"
+                  </p>
+                  <div className="flex items-center gap-4 border-t border-border-main pt-6 mt-auto">
+                    <img src={item.image} alt={item.name} className="w-12 h-12 rounded-full object-cover grayscale" referrerPolicy="no-referrer" />
+                    <div>
+                      <h4 className="font-bold text-secondary text-sm">{item.name}</h4>
+                      <p className="text-text-muted text-[10px] uppercase font-black tracking-widest">{item.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -441,19 +484,63 @@ export default function App() {
         </div>
       </section>
 
+      {/* --- EXCEL MASTERY BONUS --- */}
+      <section className="py-24 bg-primary/5 border-y border-primary/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-white rounded-3xl p-8 md:p-12 border border-primary/20 shadow-xl overflow-hidden relative">
+            <div className="absolute top-0 right-0 bg-primary text-white px-6 py-2 rounded-bl-3xl font-black text-sm uppercase tracking-widest">
+              Special Gift
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-black text-secondary mb-6 leading-tight">
+                  Enroll today and get <span className="text-primary tracking-tight">FREE instant access</span> to our Excel Mastery Course
+                </h2>
+                <p className="text-lg text-text-muted mb-8 leading-relaxed">
+                  A complete Beginner to Intermediate level foundation designed to help you succeed faster in the main bootcamp.
+                </p>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    "Excel Basics & Interface",
+                    "Essential Formulas",
+                    "Pivot Tables & Analysis",
+                    "Data Cleaning Skills",
+                    "Dashboard Basics"
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-sm font-bold text-secondary">
+                      <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="aspect-square bg-bg-main rounded-2xl flex flex-col items-center justify-center p-8 border border-border-main relative text-center">
+                  <BarChart3 className="w-24 h-24 text-primary mb-6 opacity-80" />
+                  <h3 className="text-xl font-black text-secondary uppercase tracking-tighter">Excel Mastery Bundle</h3>
+                  <p className="text-primary font-extrabold mt-2">VALUE: ₦15,000 — YOURS FREE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* --- 12. PRICING SECTION --- */}
       <section id="pricing" className="py-24 bg-bg-main relative">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading subtitle="Investment">One Small Step for Your Career</SectionHeading>
           <div className="max-w-md mx-auto relative">
-             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-6 py-1.5 rounded-full font-black text-xs z-10 shadow-lg">
+             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-6 py-1.5 rounded-full font-black text-xs z-10 shadow-lg text-center whitespace-nowrap">
                 60% DISCOUNT TODAY ONLY
              </div>
 
              <div className="bg-secondary text-white rounded-[2rem] p-10 shadow-2xl border border-white/5 relative overflow-hidden flex flex-col items-center">
                 <div className="text-center mb-10">
                   <p className="text-white/40 font-bold mb-4 uppercase tracking-[0.2em] text-[10px]">Full Course Access</p>
-                  <div className="flex items-center justify-center gap-4">
+                  <div className="flex flex-col items-center justify-center gap-4">
                     <span className="text-xl text-white/30 line-through font-bold">{COURSE_PRICE_ORIGINAL}</span>
                     <span className="text-6xl font-black text-white tracking-tighter">{COURSE_PRICE_CURRENT}</span>
                   </div>
@@ -464,7 +551,8 @@ export default function App() {
                   {[
                     "Self-paced Private Telegram",
                     "Lifetime Study Material",
-                    "15+ Capstone Projects",
+                    "5 Industry-Level Portfolio Projects",
+                    "6 Skill Projects",
                     "Certificate of Completion",
                     "Bonus: CV & Interview Prep"
                   ].map((item, i) => (
@@ -570,8 +658,8 @@ export default function App() {
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
               Chat on WhatsApp
             </a>
-            <a href="mailto:support@skalearn.com" className="hover:text-primary transition-colors text-xs font-bold uppercase tracking-wider">
-              support@skalearn.com
+            <a href="mailto:shittuadams365@gmail.com" className="hover:text-primary transition-colors text-xs font-bold uppercase tracking-wider">
+              shittuadams365@gmail.com
             </a>
           </div>
           <p className="text-[10px] font-medium opacity-60">
