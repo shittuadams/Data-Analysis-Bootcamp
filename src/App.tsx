@@ -32,7 +32,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 // --- Constants & Links ---
-const SELAR_CHECKOUT_URL = "https://selar.co/m/skalearn-data-bootcamp"; // Placeholder Selar link
+const SELAR_CHECKOUT_URL = "https://selar.com/21b3l2xb71"; // Placeholder Selar link
 const WHATSAPP_URL = "https://wa.me/2348077555789"; 
 const COURSE_PRICE_ORIGINAL = "₦60,000";
 const COURSE_PRICE_CURRENT = "₦24,900";
